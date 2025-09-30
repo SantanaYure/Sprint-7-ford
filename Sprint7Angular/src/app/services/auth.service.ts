@@ -14,7 +14,6 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  //metodo que enviar os dados de login para a API
   login(usuario: Pick<Usuario, 'nome' | 'senha'>): Observable<Usuario> {
     return this.http.post<Usuario>(`${this.apiUrl}/login`, usuario).pipe(
       tap((response) => {
@@ -23,10 +22,8 @@ export class AuthService {
     );
   }
 
-  // Logout que preserva dados salvos se "lembrar login" estiver ativo
   logout(): void {
     sessionStorage.removeItem(USER_KEY);
-    // Verifica se o usuário não marcou "lembrar login" antes de limpar
     const rememberLogin = localStorage.getItem('rememberLogin');
     if (rememberLogin !== 'true') {
       localStorage.removeItem('rememberedUser');
@@ -35,7 +32,6 @@ export class AuthService {
     this.router.navigate(['/login']);
   }
 
-  // Logout completo: limpa tudo, incluindo dados salvos e desmarca "logar automaticamente"
   logoutComplete(): void {
     sessionStorage.removeItem(USER_KEY);
     localStorage.removeItem('rememberedUser');

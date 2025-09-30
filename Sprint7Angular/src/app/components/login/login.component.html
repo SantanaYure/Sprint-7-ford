@@ -1,14 +1,10 @@
 <main class="login-container">
-  <!-- Seção da imagem (lado esquerdo) -->
   <div class="image-section">
     <img src="ranger.png" alt="Ford Ranger" class="vehicle-image" />
   </div>
 
-  <!-- Seção do formulário (lado direito) -->
   <div class="form-section">
-    <!-- Formulário de login -->
     <div class="login-form-container">
-      <!-- Logo Ford centralizada -->
       <div class="logo-container">
         <img src="ford.png" alt="Ford Logo" class="ford-logo" />
       </div>
@@ -16,7 +12,6 @@
       <h2 class="welcome-title">Boas-vindas</h2>
 
       <form #loginForm="ngForm" (ngSubmit)="login()" class="login-form">
-        <!-- Campo de usuário -->
         <div class="form-group">
           <div class="input-container">
             <span class="input-icon">👤</span>
@@ -32,7 +27,6 @@
           </div>
         </div>
 
-        <!-- Campo de senha -->
         <div class="form-group">
           <div class="input-container">
             <span class="input-icon">🔒</span>
@@ -48,7 +42,6 @@
           </div>
         </div>
 
-        <!-- Checkbox para logar automaticamente -->
         <div class="checkbox-group">
           <label class="checkbox-container">
             <input
@@ -62,7 +55,6 @@
           </label>
         </div>
 
-        <!-- Botão de entrar -->
         <button
           type="submit"
           class="login-button"
@@ -71,7 +63,6 @@
           Entrar
         </button>
 
-        <!-- Mensagem de erro -->
         <div class="error-message" *ngIf="errorMessage">
           {{ errorMessage }}
         </div>

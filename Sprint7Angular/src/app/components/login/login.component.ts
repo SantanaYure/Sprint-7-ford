@@ -22,7 +22,6 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
-    // Verifica se há dados salvos no localStorage
     this.checkSavedLogin();
   }
 
@@ -34,7 +33,6 @@ export class LoginComponent implements OnInit {
       const userData = JSON.parse(savedUser);
       this.usuario = userData;
       this.rememberMe = true;
-      // Auto-login se os dados estão salvos
       this.autoLogin();
     }
   }
@@ -47,7 +45,6 @@ export class LoginComponent implements OnInit {
       },
       error: (err) => {
         console.log('Falha no login automático');
-        // Remove dados inválidos
         this.clearSavedLogin();
       },
     });
@@ -66,7 +63,6 @@ export class LoginComponent implements OnInit {
       next: (response) => {
         console.log('Login realizado com sucesso');
 
-        // Salva ou remove dados baseado no checkbox
         if (this.rememberMe) {
           localStorage.setItem('rememberedUser', JSON.stringify(this.usuario));
           localStorage.setItem('rememberLogin', 'true');

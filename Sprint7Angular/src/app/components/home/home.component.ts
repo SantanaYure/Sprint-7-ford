@@ -13,7 +13,6 @@ export class HomeComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   logout(): void {
-    // Usa logout completo para limpar todos os dados salvos, incluindo "logar automaticamente"
     this.authService.logoutComplete();
   }
 

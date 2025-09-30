@@ -101,7 +101,6 @@
   margin-top: 8px;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   .welcome-box {
     width: 90%;
@@ -123,7 +122,7 @@
   }
 
   .imagem img {
-    display: none; /* Remove o carro de fundo no mobile */
+    display: none;
   }
 
   .imagem {

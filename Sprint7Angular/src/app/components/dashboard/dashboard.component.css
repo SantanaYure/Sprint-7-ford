@@ -43,7 +43,6 @@
   width: 100%;
 }
 
-/* Cards principais com estilo moderno */
 .card {
   background: white;
   border-radius: 20px;
@@ -86,7 +85,6 @@
   font-weight: 500;
 }
 
-/* Seletor de veículo com estilo moderno */
 .vehicle-selector {
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
 }
@@ -115,21 +113,13 @@
   box-shadow: 0 0 0 4px rgba(46, 187, 230, 0.1);
 }
 
-/* Imagem do veículo com estilo moderno */
 .vehicle-image-card {
   background: white;
   border-radius: 24px;
-  /* box-shadow: 0 12px 48px rgba(0, 0, 0, 0.08); */
   padding: 2.5rem;
   width: 100%;
   max-width: 600px;
-  transition: all 0.3s ease;
   backdrop-filter: blur(10px);
-}
-
-.vehicle-image-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 56px rgba(0, 0, 0, 0.12);
 }
 
 .vehicle-image {
@@ -139,7 +129,6 @@
   max-height: 320px;
 }
 
-/* Tabela de dados do veículo */
 .vehicle-table {
   width: 100%;
   border-radius: 12px;
@@ -192,7 +181,6 @@
   border-right: 1px solid #e9ecef;
 }
 
-/* Cards de detalhes com estilo moderno */
 .detail-card {
   background: #17258d;
   border-radius: 16px;
@@ -243,7 +231,6 @@
   line-height: 1.2;
 }
 
-/* Seção de busca com estilo moderno */
 .search-section {
   grid-column: 1 / -1;
   display: flex;
@@ -294,7 +281,6 @@
   box-shadow: 0 8px 24px rgba(23, 37, 141, 0.4);
 }
 
-/* Responsividade para telas extra grandes */
 @media (min-width: 1400px) {
   .cards-section {
     max-width: 1200px;
@@ -302,7 +288,6 @@
   }
 }
 
-/* Responsividade para tablets */
 @media (max-width: 1024px) {
   .dashboard-grid {
     grid-template-areas:
@@ -336,10 +321,11 @@
   }
 }
 
-/* Responsividade para mobile */
 @media (max-width: 768px) {
   .dashboard-container {
     padding: 1rem;
+    min-height: 100vh;
+    overflow-y: auto;
   }
 
   .dashboard-title {
@@ -381,7 +367,6 @@
     max-width: 100%;
   }
 
-  /* Tabela mobile em formato de cards */
   .vehicle-table {
     display: none;
   }
@@ -417,7 +402,6 @@
   }
 }
 
-/* Estados especiais */
 .codigo-vin {
   background: linear-gradient(135deg, #2ebbe6 0%, #17258d 100%);
 }
