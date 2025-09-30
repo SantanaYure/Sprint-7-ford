@@ -40,8 +40,8 @@
 }
 
 .imagem img {
-  width: 80vw;
-  max-width: 1000px;
+  width: 64vw;
+  max-width: 800px;
   height: auto;
   opacity: 0.6;
   object-fit: contain;
