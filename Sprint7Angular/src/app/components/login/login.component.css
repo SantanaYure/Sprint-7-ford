@@ -78,15 +78,14 @@
   position: relative;
   display: flex;
   align-items: center;
-  border: 2px solid #e9ecef;
   border-radius: 8px;
   background: white;
-  transition: border-color 0.2s ease;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .input-container:focus-within {
-  border-color: var(--ford-blue-primary, #17258d);
-  box-shadow: 0 0 0 3px rgba(23, 37, 141, 0.1);
+  box-shadow: 0 0 0 3px rgba(23, 37, 141, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .input-icon {
@@ -135,18 +134,17 @@
 .checkmark {
   width: 20px;
   height: 20px;
-  border: 2px solid #e9ecef;
   border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
   background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .checkbox-input:checked + .checkmark {
   background: var(--ford-blue-primary, #17258d);
-  border-color: var(--ford-blue-primary, #17258d);
 }
 
 .checkbox-input:checked + .checkmark::after {

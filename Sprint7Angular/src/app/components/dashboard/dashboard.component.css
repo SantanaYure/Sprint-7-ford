@@ -49,7 +49,6 @@
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   padding: 1.8rem;
-  border: 1px solid rgba(255, 255, 255, 0.18);
   min-height: 140px;
   display: flex;
   flex-direction: column;
@@ -90,13 +89,12 @@
 /* Seletor de veículo com estilo moderno */
 .vehicle-selector {
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-  border: 2px solid #e9ecef;
 }
 
 .vehicle-selector .vehicle-select {
   width: 100%;
   padding: 0.8rem;
-  border: 2px solid #17258d;
+  border: 1px solid #e9ecef;
   border-radius: 12px;
   font-size: 1rem;
   background: white;
@@ -113,7 +111,7 @@
 }
 
 .vehicle-selector .vehicle-select:focus {
-  border-color: #2ebbe6;
+  border-color: #17258d;
   box-shadow: 0 0 0 4px rgba(46, 187, 230, 0.1);
 }
 
@@ -123,7 +121,6 @@
   border-radius: 24px;
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.08);
   padding: 2.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.18);
   width: 100%;
   max-width: 600px;
   transition: all 0.3s ease;
@@ -426,6 +423,5 @@
 }
 
 .vehicle-selector {
-  border: 2px solid #17258d;
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
 }
