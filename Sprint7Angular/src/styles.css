@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Variáveis CSS globais para cores */
+:root {
+  --ford-blue-primary: #17258d;
+  --ford-blue-secondary: #2ebbe6;
+  --ford-blue-dark: #0f1a6b;
+  --ford-gray-light: #f8f9fa;
+  --ford-gray-medium: #e9ecef;
+}
+
+html,
+body {
+  overflow-y: hidden !important;
+  padding: 0;
+  margin: 0;
+}

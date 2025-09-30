@@ -1,0 +1,431 @@
+.dashboard-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: #f8f9fa;
+}
+
+.dashboard-title {
+  text-align: center;
+  color: #17258d;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-areas:
+    "cards cards cards cards"
+    "image image image image"
+    "table table table table";
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.cards-section {
+  grid-area: cards;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.vehicle-image-section {
+  grid-area: image;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.vehicle-table-section {
+  grid-area: table;
+  width: 100%;
+}
+
+/* Cards principais com estilo moderno */
+.card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  padding: 1.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #8e8e93;
+  margin: 0 0 1.2rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.card-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #17258d;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.card-unit {
+  font-size: 0.85rem;
+  color: #8e8e93;
+  font-weight: 500;
+}
+
+/* Seletor de veículo com estilo moderno */
+.vehicle-selector {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border: 2px solid #e9ecef;
+}
+
+.vehicle-selector .vehicle-select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #17258d;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: white;
+  color: #17258d;
+  font-weight: 600;
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2317258d' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.8rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 3rem;
+  transition: all 0.2s ease;
+}
+
+.vehicle-selector .vehicle-select:focus {
+  border-color: #2ebbe6;
+  box-shadow: 0 0 0 4px rgba(46, 187, 230, 0.1);
+}
+
+/* Imagem do veículo com estilo moderno */
+.vehicle-image-card {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 100%;
+  max-width: 600px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.vehicle-image-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 56px rgba(0, 0, 0, 0.12);
+}
+
+.vehicle-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 320px;
+}
+
+/* Tabela de dados do veículo */
+.vehicle-table {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  background: white;
+  display: block;
+}
+
+.mobile-data-cards {
+  display: none;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  background: #17258d;
+  color: white;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  background: white;
+}
+
+.table-cell {
+  padding: 1rem;
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.table-cell:last-child {
+  border-right: none;
+}
+
+.header-cell {
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: #17258d;
+  color: white;
+}
+
+.data-cell {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #333;
+  border-right: 1px solid #e9ecef;
+}
+
+/* Cards de detalhes com estilo moderno */
+.detail-card {
+  background: #17258d;
+  border-radius: 16px;
+  padding: 1.2rem;
+  box-shadow: 0 8px 32px rgba(23, 37, 141, 0.2);
+  min-height: 85px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.detail-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none;
+}
+
+.detail-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(23, 37, 141, 0.3);
+}
+
+.detail-card h4 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 0.6rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.detail-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
+}
+
+/* Seção de busca com estilo moderno */
+.search-section {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+}
+
+.search-input {
+  flex: 1;
+  max-width: 400px;
+  padding: 0.9rem 1.2rem;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.search-input:focus {
+  border-color: #17258d;
+  box-shadow: 0 0 0 4px rgba(23, 37, 141, 0.1);
+  background: white;
+}
+
+.search-button {
+  padding: 0.9rem 2.2rem;
+  background: linear-gradient(135deg, #17258d 0%, #2ebbe6 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(23, 37, 141, 0.3);
+}
+
+.search-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(23, 37, 141, 0.4);
+}
+
+/* Responsividade para telas extra grandes */
+@media (min-width: 1400px) {
+  .cards-section {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* Responsividade para tablets */
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-areas:
+      "cards cards"
+      "image image"
+      "table table";
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cards-section {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .card {
+    min-height: 120px;
+    padding: 1.4rem;
+  }
+
+  .card-value {
+    font-size: 2rem;
+  }
+
+  .table-header,
+  .table-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .table-cell:nth-child(n + 4) {
+    display: none;
+  }
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+
+  .dashboard-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .dashboard-grid {
+    grid-template-areas:
+      "cards"
+      "image"
+      "table";
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .cards-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1.2rem;
+    min-height: 110px;
+    border-radius: 16px;
+  }
+
+  .card-value {
+    font-size: 1.8rem;
+  }
+
+  .vehicle-image-section {
+    margin: 1rem 0;
+  }
+
+  .vehicle-image-card {
+    padding: 1.5rem;
+    border-radius: 20px;
+    max-width: 100%;
+  }
+
+  /* Tabela mobile em formato de cards */
+  .vehicle-table {
+    display: none;
+  }
+
+  .mobile-data-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .mobile-data-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mobile-data-label {
+    font-weight: 600;
+    color: #17258d;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .mobile-data-value {
+    font-weight: 500;
+    color: #333;
+    font-size: 1rem;
+  }
+}
+
+/* Estados especiais */
+.codigo-vin {
+  background: linear-gradient(135deg, #2ebbe6 0%, #17258d 100%);
+}
+
+.vehicle-selector {
+  border: 2px solid #17258d;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}

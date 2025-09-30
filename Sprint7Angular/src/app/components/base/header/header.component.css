@@ -1,0 +1,99 @@
+.header-container {
+  max-height: 120px;
+  width: 100%;
+  height: 100%;
+}
+
+.menu-container {
+  width: 100%;
+}
+
+#menu-container__label {
+  width: 35px;
+  height: 35px;
+  margin: 0.5rem;
+  user-select: none;
+  cursor: pointer;
+
+  img {
+    filter: brightness(0) saturate(100%) invert(11%) sepia(89%) saturate(2049%)
+      hue-rotate(225deg) brightness(89%) contrast(95%);
+    transition: filter 0.2s ease;
+  }
+
+  &:hover img {
+    filter: brightness(0) saturate(100%) invert(21%) sepia(100%) saturate(1872%)
+      hue-rotate(215deg) brightness(90%) contrast(94%);
+  }
+}
+
+.menu-aside-container {
+  inset: 0;
+  z-index: 10;
+  background-color: #ffffff;
+  max-width: 250px;
+  width: 100vw;
+  height: 100vh;
+  transform: translateX(-255px);
+  transition: 300ms ease-out;
+}
+.menu-container > #menu-container__checkbox:checked ~ .menu-aside-container {
+  transform: translateX(0);
+  transition: 200ms ease;
+}
+
+.menu-aside-container__image {
+  width: 100%;
+
+  img {
+    width: 50%;
+  }
+}
+
+.menu-aside-container__close-button {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+
+  img {
+    user-select: none;
+    pointer-events: none;
+    width: 85%;
+    filter: brightness(0) saturate(100%) invert(11%) sepia(89%) saturate(2049%)
+      hue-rotate(225deg) brightness(89%) contrast(95%);
+    transition: filter 0.2s ease;
+  }
+
+  &:hover img {
+    filter: brightness(0) saturate(100%) invert(21%) sepia(100%) saturate(1872%)
+      hue-rotate(215deg) brightness(90%) contrast(94%);
+  }
+}
+
+.menu-aside-container__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-aside-container__item {
+  width: 100%;
+  background-color: var(--bs-gray-200);
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  border-left: 3px solid transparent;
+
+  &:hover {
+    border-left: 3px solid var(--ford-blue-primary, #17258d);
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    padding-left: 0.25rem;
+    text-decoration: none;
+    color: var(--ford-blue-primary, #17258d);
+    font-weight: 600;
+  }
+}

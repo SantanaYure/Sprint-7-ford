@@ -1,0 +1,125 @@
+<app-header />
+<main class="dashboard-container">
+  <h2 class="dashboard-title">Dashboard FORD</h2>
+
+  <div class="dashboard-grid">
+    <!-- Seção de cards superiores -->
+    <div class="cards-section">
+      <div class="card vehicle-selector">
+        <h4>VEÍCULO</h4>
+        <select (change)="getSelectVehicle($event)" class="vehicle-select">
+          <option value="2" selected>Mustang</option>
+          <option value="1">Ranger</option>
+          <option value="3">Territory</option>
+          <option value="4">Bronco Sport</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <h4>TOTAL DE VENDAS</h4>
+        <div class="card-value">{{ this.vehicle.volumetotal || "145760" }}</div>
+        <div class="card-unit">Unid.</div>
+      </div>
+
+      <div class="card">
+        <h4>CONECTADOS</h4>
+        <div class="card-value">{{ this.vehicle.connected || "70000" }}</div>
+        <div class="card-unit">Unid.</div>
+      </div>
+
+      <div class="card">
+        <h4>UPDATE SOFTWARE</h4>
+        <div class="card-value">
+          {{ this.vehicle.softwareUpdates || "27550" }}
+        </div>
+        <div class="card-unit">Unid.</div>
+      </div>
+    </div>
+
+    <!-- Seção da imagem do veículo centralizada -->
+    @if(this.vehicle.id){
+    <div class="vehicle-image-section">
+      <div class="vehicle-image-card">
+        <img
+          [src]="this.vehicle.img"
+          alt="Imagem do veículo"
+          class="vehicle-image"
+        />
+      </div>
+    </div>
+    }
+
+    <!-- Tabela de dados do veículo -->
+    <div class="vehicle-table-section">
+      <!-- Versão desktop da tabela -->
+      <div class="vehicle-table">
+        <div class="table-header">
+          <div class="table-cell header-cell">Código - Vin</div>
+          <div class="table-cell header-cell">Odômetro</div>
+          <div class="table-cell header-cell">Nível de Combustível</div>
+          <div class="table-cell header-cell">Status</div>
+          <div class="table-cell header-cell">Lat.</div>
+          <div class="table-cell header-cell">Long.</div>
+        </div>
+        <div class="table-row">
+          <div class="table-cell data-cell">
+            {{ getVehicleVin() }}
+          </div>
+          <div class="table-cell data-cell">
+            {{ foundVehiclesData?.odometro || "50000" }} Km
+          </div>
+          <div class="table-cell data-cell">
+            {{ foundVehiclesData?.nivelCombustivel || "90" }} %
+          </div>
+          <div class="table-cell data-cell">
+            {{ foundVehiclesData?.status || "on" }}
+          </div>
+          <div class="table-cell data-cell">
+            {{ foundVehiclesData?.lat || "-12.2322" }}
+          </div>
+          <div class="table-cell data-cell">
+            {{ foundVehiclesData?.long || "-35.2314" }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Versão mobile em cards -->
+      <div class="mobile-data-cards">
+        <div class="mobile-data-card">
+          <span class="mobile-data-label">Código - VIN</span>
+          <span class="mobile-data-value">{{ getVehicleVin() }}</span>
+        </div>
+        <div class="mobile-data-card">
+          <span class="mobile-data-label">Odômetro</span>
+          <span class="mobile-data-value"
+            >{{ foundVehiclesData?.odometro || "50000" }} Km</span
+          >
+        </div>
+        <div class="mobile-data-card">
+          <span class="mobile-data-label">Nível de Combustível</span>
+          <span class="mobile-data-value"
+            >{{ foundVehiclesData?.nivelCombustivel || "90" }} %</span
+          >
+        </div>
+        <div class="mobile-data-card">
+          <span class="mobile-data-label">Status</span>
+          <span class="mobile-data-value">{{
+            foundVehiclesData?.status || "on"
+          }}</span>
+        </div>
+        <div class="mobile-data-card">
+          <span class="mobile-data-label">Latitude</span>
+          <span class="mobile-data-value">{{
+            foundVehiclesData?.lat || "-12.2322"
+          }}</span>
+        </div>
+        <div class="mobile-data-card">
+          <span class="mobile-data-label">Longitude</span>
+          <span class="mobile-data-value">{{
+            foundVehiclesData?.long || "-35.2314"
+          }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

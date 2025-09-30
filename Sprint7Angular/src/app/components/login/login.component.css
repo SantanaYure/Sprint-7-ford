@@ -1,0 +1,43 @@
+.login-container {
+    width: 100%;
+    height: 100vh;
+}
+
+.image-container { 
+    width: 100%;
+    height: 100%;
+
+    img {
+        width: 100%; 
+    }
+}  
+
+.form-container {
+    background-color: var(--bs-gray-200);
+    height: 100%;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-self: end;
+        margin: auto;
+    }
+
+    h2 {
+        margin: 0 auto;
+        color: rgb(1, 185, 1);
+    }
+}
+
+.form-containe__logo-container {
+    width: 50%;
+    margin: 0 auto;
+    img {
+        width: 100%;
+    }
+}
+
+.form-group__input-box {
+    width: 100%;
+}
