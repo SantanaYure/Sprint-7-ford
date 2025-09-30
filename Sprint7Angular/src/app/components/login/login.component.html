@@ -1,42 +1,81 @@
-<main class="d-flex justify-content-center align-items-center login-container">
-  <div class="image-container d-flex align-items-center">
-    <img src="/img/ranger.png" alt="Imagem da Ranger" />
+<main class="login-container">
+  <!-- Seção da imagem (lado esquerdo) -->
+  <div class="image-section">
+    <img src="ranger.png" alt="Ford Ranger" class="vehicle-image" />
   </div>
-  <div class="form-container d-flex flex-column px-5">
-    <div class="form-containe__logo-container">
-      <img src="/img/ford.png" alt="Logo da ford" />
+
+  <!-- Seção do formulário (lado direito) -->
+  <div class="form-section">
+    <!-- Logo Ford no topo -->
+    <div class="logo-container">
+      <img src="ford.png" alt="Ford Logo" class="ford-logo" />
     </div>
-    
-    <form #loginForm="ngForm" (ngSubmit)="login()" class="align-self-end">
-      <h2>Boas-vindas</h2>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Usuario</label>
-        <input
-          type="email"
-          class="form-control"
-          id="nome"
-          name="nome"
-          [(ngModel)]="usuario.nome"
-          aria-describedby="emailHelp"
-          placeholder="Insira seu e-mail"
-          required
-        />
-      </div>
 
-      <div class="form-group">
-        <label for="exampleInputPassword1">Senha</label>
-        <input
-          type="password"
-          name="senha"
-          class="form-control"
-          id="senha"
-          [(ngModel)]="usuario.senha"
-          placeholder="Insira sua senha"
-          required
-        />
-      </div>
+    <!-- Formulário de login -->
+    <div class="login-form-container">
+      <h2 class="welcome-title">Boas-vindas</h2>
 
-      <button type="submit" class="btn btn-primary mt-4">Entrar</button>
-    </form>
+      <form #loginForm="ngForm" (ngSubmit)="login()" class="login-form">
+        <!-- Campo de usuário -->
+        <div class="form-group">
+          <div class="input-container">
+            <span class="input-icon">👤</span>
+            <input
+              type="email"
+              class="form-input"
+              id="nome"
+              name="nome"
+              [(ngModel)]="usuario.nome"
+              placeholder="Insira seu e-mail"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Campo de senha -->
+        <div class="form-group">
+          <div class="input-container">
+            <span class="input-icon">🔒</span>
+            <input
+              type="password"
+              name="senha"
+              class="form-input"
+              id="senha"
+              [(ngModel)]="usuario.senha"
+              placeholder="Insira sua senha"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Checkbox para logar automaticamente -->
+        <div class="checkbox-group">
+          <label class="checkbox-container">
+            <input
+              type="checkbox"
+              [(ngModel)]="rememberMe"
+              name="rememberMe"
+              class="checkbox-input"
+            />
+            <span class="checkmark"></span>
+            <span class="checkbox-label">Logar automaticamente</span>
+          </label>
+        </div>
+
+        <!-- Botão de entrar -->
+        <button
+          type="submit"
+          class="login-button"
+          [disabled]="!loginForm.valid"
+        >
+          Entrar
+        </button>
+
+        <!-- Mensagem de erro -->
+        <div class="error-message" *ngIf="errorMessage">
+          {{ errorMessage }}
+        </div>
+      </form>
+    </div>
   </div>
 </main>

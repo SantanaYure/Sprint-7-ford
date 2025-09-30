@@ -1,43 +1,305 @@
 .login-container {
-    width: 100%;
-    height: 100vh;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: #f8f9fa;
 }
 
-.image-container { 
-    width: 100%;
-    height: 100%;
-
-    img {
-        width: 100%; 
-    }
-}  
-
-.form-container {
-    background-color: var(--bs-gray-200);
-    height: 100%;
-
-    form {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        align-self: end;
-        margin: auto;
-    }
-
-    h2 {
-        margin: 0 auto;
-        color: rgb(1, 185, 1);
-    }
+/* Seção da imagem (lado esquerdo) */
+.image-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%);
+  padding: 2rem;
 }
 
-.form-containe__logo-container {
-    width: 50%;
-    margin: 0 auto;
-    img {
-        width: 100%;
-    }
+.vehicle-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.9;
 }
 
-.form-group__input-box {
-    width: 100%;
+/* Seção do formulário (lado direito) */
+.form-section {
+  flex: 1;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Logo Ford */
+.logo-container {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.ford-logo {
+  width: 80px;
+  height: auto;
+}
+
+/* Container do formulário */
+.login-form-container {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.welcome-title {
+  color: var(--ford-blue-secondary, #2ebbe6);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: right;
+}
+
+/* Formulário */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Grupos de campo */
+.form-group {
+  text-align: left;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  background: white;
+  transition: border-color 0.2s ease;
+}
+
+.input-container:focus-within {
+  border-color: var(--ford-blue-primary, #17258d);
+  box-shadow: 0 0 0 3px rgba(23, 37, 141, 0.1);
+}
+
+.input-icon {
+  padding: 0 0.75rem;
+  font-size: 1.2rem;
+  color: #6c757d;
+  user-select: none;
+}
+
+.form-input {
+  flex: 1;
+  border: none;
+  padding: 0.875rem 0.75rem;
+  font-size: 1rem;
+  background: transparent;
+  outline: none;
+  border-radius: 0 6px 6px 0;
+}
+
+.form-input::placeholder {
+  color: #6c757d;
+  font-weight: 400;
+}
+
+/* Checkbox personalizado */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+  margin: 0;
+}
+
+.checkbox-input {
+  display: none;
+}
+
+.checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e9ecef;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.checkbox-input:checked + .checkmark {
+  background: var(--ford-blue-primary, #17258d);
+  border-color: var(--ford-blue-primary, #17258d);
+}
+
+.checkbox-input:checked + .checkmark::after {
+  content: "✓";
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.checkbox-label {
+  color: #495057;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Botão de login */
+.login-button {
+  width: 100%;
+  padding: 0.875rem;
+  background: linear-gradient(
+    135deg,
+    var(--ford-blue-primary, #17258d) 0%,
+    var(--ford-blue-secondary, #2ebbe6) 100%
+  );
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.login-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(23, 37, 141, 0.3);
+}
+
+.login-button:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Mensagem de erro */
+.error-message {
+  color: #dc3545;
+  font-size: 0.875rem;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: rgba(220, 53, 69, 0.1);
+  border-radius: 6px;
+  border: 1px solid rgba(220, 53, 69, 0.2);
+}
+
+/* Responsividade para tablets */
+@media (max-width: 1024px) {
+  .form-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .logo-container {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .ford-logo {
+    width: 70px;
+  }
+
+  .welcome-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .image-section {
+    flex: 0 0 auto;
+    height: 35vh;
+    padding: 1rem;
+  }
+
+  .vehicle-image {
+    max-width: 300px;
+  }
+
+  .form-section {
+    flex: 1;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .logo-container {
+    position: static;
+    margin-bottom: 1rem;
+  }
+
+  .ford-logo {
+    width: 60px;
+  }
+
+  .welcome-title {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .login-form-container {
+    max-width: 100%;
+  }
+
+  .login-form {
+    gap: 1.25rem;
+  }
+
+  .form-input {
+    padding: 0.75rem;
+  }
+
+  .checkbox-label {
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile pequeno */
+@media (max-width: 480px) {
+  .image-section {
+    height: 30vh;
+    padding: 0.5rem;
+  }
+
+  .vehicle-image {
+    max-width: 250px;
+  }
+
+  .form-section {
+    padding: 1rem;
+  }
+
+  .welcome-title {
+    font-size: 1.2rem;
+  }
+
+  .login-button {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
 }
