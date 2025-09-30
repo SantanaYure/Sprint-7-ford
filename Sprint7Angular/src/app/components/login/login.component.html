@@ -6,13 +6,13 @@
 
   <!-- Seção do formulário (lado direito) -->
   <div class="form-section">
-    <!-- Logo Ford no topo -->
-    <div class="logo-container">
-      <img src="ford.png" alt="Ford Logo" class="ford-logo" />
-    </div>
-
     <!-- Formulário de login -->
     <div class="login-form-container">
+      <!-- Logo Ford centralizada -->
+      <div class="logo-container">
+        <img src="ford.png" alt="Ford Logo" class="ford-logo" />
+      </div>
+
       <h2 class="welcome-title">Boas-vindas</h2>
 
       <form #loginForm="ngForm" (ngSubmit)="login()" class="login-form">

@@ -37,13 +37,13 @@
 
 /* Logo Ford */
 .logo-container {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 .ford-logo {
-  width: 80px;
+  width: 100px;
   height: auto;
 }
 
@@ -55,11 +55,11 @@
 }
 
 .welcome-title {
-  color: var(--ford-blue-secondary, #2ebbe6);
+  color: var(--ford-blue-primary, #17258d);
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 2rem;
-  text-align: right;
+  text-align: center;
 }
 
 /* Formulário */
@@ -211,13 +211,8 @@
     padding: 2rem 1.5rem;
   }
 
-  .logo-container {
-    top: 1.5rem;
-    right: 1.5rem;
-  }
-
   .ford-logo {
-    width: 70px;
+    width: 87.5px;
   }
 
   .welcome-title {
@@ -248,12 +243,11 @@
   }
 
   .logo-container {
-    position: static;
     margin-bottom: 1rem;
   }
 
   .ford-logo {
-    width: 60px;
+    width: 75px;
   }
 
   .welcome-title {

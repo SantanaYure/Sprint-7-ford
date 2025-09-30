@@ -37,9 +37,17 @@
   transform: translateX(-255px);
   transition: 300ms ease-out;
 }
+
 .menu-container > #menu-container__checkbox:checked ~ .menu-aside-container {
   transform: translateX(0);
   transition: 200ms ease;
+}
+
+.menu-header {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e9ecef;
 }
 
 .menu-aside-container__image {
@@ -76,13 +84,16 @@
 .menu-aside-container__list {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
+  padding: 0 0.75rem;
 }
 
 .menu-aside-container__item {
   width: 100%;
   background-color: var(--bs-gray-200);
-  padding: 0.5rem 0.5rem 0.5rem 0;
+  padding: 0.75rem;
   border-left: 3px solid transparent;
+  border-radius: 6px;
 
   &:hover {
     border-left: 3px solid var(--ford-blue-primary, #17258d);
@@ -91,7 +102,6 @@
   a {
     display: block;
     width: 100%;
-    padding-left: 0.25rem;
     text-decoration: none;
     color: var(--ford-blue-primary, #17258d);
     font-weight: 600;
