@@ -6,20 +6,21 @@ import { HeaderComponent } from '../base/header/header.component';
   selector: 'app-home',
   imports: [HeaderComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  constructor(private authService:AuthService){}
+  constructor(private authService: AuthService) {}
 
-  logout():void{
-    this.authService.logout();
+  logout(): void {
+    // Usa logout completo para limpar todos os dados salvos, incluindo "logar automaticamente"
+    this.authService.logoutComplete();
   }
 
   flagDialog: boolean = true;
 
   closeDialog(): void {
-    this.flagDialog = false
-    console.log(this.flagDialog)
-    return
+    this.flagDialog = false;
+    console.log(this.flagDialog);
+    return;
   }
 }

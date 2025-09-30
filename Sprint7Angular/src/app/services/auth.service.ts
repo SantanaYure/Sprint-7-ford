@@ -23,6 +23,7 @@ export class AuthService {
     );
   }
 
+  // Logout que preserva dados salvos se "lembrar login" estiver ativo
   logout(): void {
     sessionStorage.removeItem(USER_KEY);
     // Verifica se o usuário não marcou "lembrar login" antes de limpar
@@ -34,7 +35,7 @@ export class AuthService {
     this.router.navigate(['/login']);
   }
 
-  // Método para logout completo (limpa tudo)
+  // Logout completo: limpa tudo, incluindo dados salvos e desmarca "logar automaticamente"
   logoutComplete(): void {
     sessionStorage.removeItem(USER_KEY);
     localStorage.removeItem('rememberedUser');
