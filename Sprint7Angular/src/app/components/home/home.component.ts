@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { HeaderComponent } from '../base/header/header.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,11 +10,15 @@ import { HeaderComponent } from '../base/header/header.component';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   logout(): void {
     // Usa logout completo para limpar todos os dados salvos, incluindo "logar automaticamente"
     this.authService.logoutComplete();
+  }
+
+  goToDashboard(): void {
+    this.router.navigate(['/dashboard']);
   }
 
   flagDialog: boolean = true;
